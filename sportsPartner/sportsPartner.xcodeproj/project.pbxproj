@@ -17,8 +17,6 @@
 		0DE1F4A81C535B590065F846 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1F4A01C535B590065F846 /* SystemConfiguration.framework */; };
 		0DE1F4AA1C535B650065F846 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1F4A91C535B650065F846 /* libz.tbd */; };
 		0DE1F4AC1C535B710065F846 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1F4AB1C535B710065F846 /* libsqlite3.tbd */; };
-		0DE1F4AF1C535CD00065F846 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1F4AD1C535CD00065F846 /* Bolts.framework */; };
-		0DE1F4B01C535CD00065F846 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1F4AE1C535CD00065F846 /* Parse.framework */; };
 		0DFB99851C53626F009684F1 /* DAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB99841C53626F009684F1 /* DAL.swift */; };
 		4D7A64221C534EF800BE4A9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A64211C534EF800BE4A9D /* AppDelegate.swift */; };
 		4D7A64241C534EF800BE4A9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A64231C534EF800BE4A9D /* ViewController.swift */; };
@@ -27,6 +25,8 @@
 		4D7A642C1C534EF800BE4A9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7A642A1C534EF800BE4A9D /* LaunchScreen.storyboard */; };
 		4D7A64371C534EF800BE4A9D /* sportsPartnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A64361C534EF800BE4A9D /* sportsPartnerTests.swift */; };
 		4D7A64421C534EF800BE4A9D /* sportsPartnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A64411C534EF800BE4A9D /* sportsPartnerUITests.swift */; };
+		932509431C53DFF700CFDB2D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932509411C53DFF700CFDB2D /* Bolts.framework */; };
+		932509441C53DFF700CFDB2D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932509421C53DFF700CFDB2D /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +57,6 @@
 		0DE1F4A01C535B590065F846 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0DE1F4A91C535B650065F846 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0DE1F4AB1C535B710065F846 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		0DE1F4AD1C535CD00065F846 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		0DE1F4AE1C535CD00065F846 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		0DFB99841C53626F009684F1 /* DAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAL.swift; sourceTree = "<group>"; };
 		4D7A641E1C534EF800BE4A9D /* sportsPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sportsPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7A64211C534EF800BE4A9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +71,8 @@
 		4D7A643D1C534EF800BE4A9D /* sportsPartnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sportsPartnerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7A64411C534EF800BE4A9D /* sportsPartnerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sportsPartnerUITests.swift; sourceTree = "<group>"; };
 		4D7A64431C534EF800BE4A9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		932509411C53DFF700CFDB2D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		932509421C53DFF700CFDB2D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +88,9 @@
 				0DE1F4A41C535B590065F846 /* CoreLocation.framework in Frameworks */,
 				0DE1F4A51C535B590065F846 /* QuartzCore.framework in Frameworks */,
 				0DE1F4A61C535B590065F846 /* Security.framework in Frameworks */,
-				0DE1F4AF1C535CD00065F846 /* Bolts.framework in Frameworks */,
+				932509431C53DFF700CFDB2D /* Bolts.framework in Frameworks */,
 				0DE1F4A71C535B590065F846 /* StoreKit.framework in Frameworks */,
-				0DE1F4B01C535CD00065F846 /* Parse.framework in Frameworks */,
+				932509441C53DFF700CFDB2D /* Parse.framework in Frameworks */,
 				0DE1F4A81C535B590065F846 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,8 +115,8 @@
 		4D7A64151C534EF800BE4A9D = {
 			isa = PBXGroup;
 			children = (
-				0DE1F4AD1C535CD00065F846 /* Bolts.framework */,
-				0DE1F4AE1C535CD00065F846 /* Parse.framework */,
+				932509411C53DFF700CFDB2D /* Bolts.framework */,
+				932509421C53DFF700CFDB2D /* Parse.framework */,
 				0DE1F4AB1C535B710065F846 /* libsqlite3.tbd */,
 				0DE1F4A91C535B650065F846 /* libz.tbd */,
 				0DE1F4991C535B590065F846 /* AudioToolbox.framework */,

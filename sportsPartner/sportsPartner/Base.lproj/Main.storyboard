@@ -166,15 +166,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="zB7-pz-Jlg" kind="relationship" relationship="viewControllers" id="s7R-g8-p3g"/>
                         <segue destination="wPY-9B-8Fw" kind="relationship" relationship="viewControllers" id="nyy-8S-OCH"/>
+                        <segue destination="zB7-pz-Jlg" kind="relationship" relationship="viewControllers" id="s7R-g8-p3g"/>
                         <segue destination="URc-SW-wFR" kind="relationship" relationship="viewControllers" id="j0s-eT-Ktv"/>
                         <segue destination="Wb3-Hw-LA4" kind="relationship" relationship="viewControllers" id="TS4-eI-zmv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HFc-hb-Gdc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2374.5" y="346.5"/>
+            <point key="canvasLocation" x="2364.5" y="346.5"/>
         </scene>
         <!--Profile-->
         <scene sceneID="x7Z-90-DOW">
@@ -187,6 +187,14 @@
                     <view key="view" contentMode="scaleToFill" id="pAu-AT-MD7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5qt-aB-Z4r">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                <items>
+                                    <navigationItem title="Profile" prompt=" " id="O3Y-yN-TjX"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="user" id="5s6-uc-Pch"/>
@@ -207,6 +215,14 @@
                     <view key="view" contentMode="scaleToFill" id="a92-Qq-bDh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZK7-wa-XRO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                <items>
+                                    <navigationItem title="Search" prompt=" " id="Nru-Ak-kbP"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="WmG-dN-vnT"/>
@@ -227,6 +243,14 @@
                     <view key="view" contentMode="scaleToFill" id="ITz-XZ-X3P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nze-sf-J1f">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                <items>
+                                    <navigationItem title="Settings" prompt=" " id="fSQ-Hs-VxR"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings-50" id="u5P-Bc-Oyh"/>
@@ -247,6 +271,22 @@
                     <view key="view" contentMode="scaleToFill" id="ou5-bR-zLP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tBV-Bt-3do">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                <items>
+                                    <navigationItem title="Event" prompt=" " id="Aab-s5-K1u"/>
+                                </items>
+                            </navigationBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="exg-72-5u2">
+                                <rect key="frame" x="42" y="86" width="291" height="29"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="My events"/>
+                                    <segment title="Joined Events"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Events" image="event" id="07t-Yh-7b5"/>
@@ -254,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDc-wb-9sl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2657.5" y="1339.5"/>
+            <point key="canvasLocation" x="2647.5" y="1313.5"/>
         </scene>
     </scenes>
     <resources>

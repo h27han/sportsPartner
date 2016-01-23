@@ -176,7 +176,7 @@
             </objects>
             <point key="canvasLocation" x="2374.5" y="346.5"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="x7Z-90-DOW">
             <objects>
                 <viewController id="URc-SW-wFR" sceneMemberID="viewController">
@@ -189,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="5s6-uc-Pch"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="user" id="5s6-uc-Pch"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2b-8g-Sgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -216,7 +216,7 @@
             </objects>
             <point key="canvasLocation" x="2207.5" y="1313.5"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="Ot4-Ab-l7x">
             <objects>
                 <viewController id="Wb3-Hw-LA4" sceneMemberID="viewController">
@@ -229,7 +229,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="u5P-Bc-Oyh"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings-50" id="u5P-Bc-Oyh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lIC-LQ-Qyx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -258,6 +258,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Settings-50" width="25" height="25"/>
         <image name="event" width="25" height="25"/>
+        <image name="user" width="25" height="25"/>
     </resources>
 </document>

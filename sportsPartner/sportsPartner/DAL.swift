@@ -89,6 +89,8 @@ class DAL {
         //1
         let user = PFUser()
         
+        print(user.username)
+        
         //2
         user.username = name
         user.password = password

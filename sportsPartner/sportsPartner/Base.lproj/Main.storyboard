@@ -236,7 +236,7 @@
             </objects>
             <point key="canvasLocation" x="3455.5" y="1313.5"/>
         </scene>
-        <!--Item-->
+        <!--Events-->
         <scene sceneID="d8S-oU-WPi">
             <objects>
                 <viewController id="wPY-9B-8Fw" sceneMemberID="viewController">
@@ -249,7 +249,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="07t-Yh-7b5"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="event" id="07t-Yh-7b5"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDc-wb-9sl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -257,4 +257,7 @@
             <point key="canvasLocation" x="2657.5" y="1339.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="event" width="25" height="25"/>
+    </resources>
 </document>

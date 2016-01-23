@@ -21,13 +21,15 @@ class ViewController: UIViewController {
         print("Object has been saved.")
     }
     */
-    let dal = DAL()
+    //let dal = DAL()
     //dal.test()
     //dal.signUp("Noxoin", password: "hello", email: "dixoncheung01@gmail.com")
-
+    /*
+    for var x = 0; x < 10; ++x {
         print("WEEEEEEEE")
-        dal.signUp("Frank" , password: "helo" , email: "frankhanhj@gmail.com")
-		
+        dal.signUp("Noxoin" + String(x), password: "helo" + String(x), email: "email"+String(x)+"@gmail.com")
+    }
+    */
     // Do any additional setup after loading the view, typically from a nib.
   }
 

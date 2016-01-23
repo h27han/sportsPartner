@@ -28,6 +28,29 @@ class DAL {
         }
     }
     
+    func editEvent(eventId:String, username:String, title:String, description:String, maxParticipants:Int, activity:String, startTime:NSDate, endTime:NSDate, location:CLLocation) {
+        let query = PFQuery(className: "Events")
+        query.getObjectInBackgroundWithId(eventId) {
+            (entry : PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                print(error);
+            } else {
+                let entry = PFObject(className: "Events")
+                entry.setObject(username, forKey: "userCreated")
+                entry.setObject(title, forKey: "title")
+                entry.setObject(description, forKey: "description")
+                entry.setObject(maxParticipants, forKey: "maxParticipants")
+                entry.setObject(activity, forKey: "activities")
+                entry.setObject(startTime, forKey: "startTime")
+                entry.setObject(endTime, forKey: "endTime")
+                entry.setObject(PFGeoPoint(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude), forKey: "location")
+                entry.saveInBackgroundWithBlock {(success:Bool, error:NSError?) -> Void in
+                    
+                }
+            }
+        }
+    }
+    
     func createEvent(username:String, title:String, description:String, maxParticipants:Int, activity:String, startTime:NSDate, endTime:NSDate, location:CLLocation) {
         let entry = PFObject(className: "Events")
         entry.setObject(username, forKey: "userCreated")
@@ -52,7 +75,26 @@ class DAL {
         }
     }
     
-    func findLocalEvents(location:CLLocation, distance:Double, limit:Int, activity:String) throws -> NSArray {
+    func getRating(username:String) {
+        let query = PFQuery(className: "Ratings")
+        query.whereKey("username", equalTo: username)
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if error != nil {
+                print(error);
+            } else {
+                if let objects = objects {
+                    var sum = 0;
+                    for object in objects {
+                        sum += object.valueForKey("Rating") as! Int!
+                    }
+                    var avg : Float
+                    avg = Float(sum) / Float(objects.count)
+                }
+            }
+        }
+    }
+    
+    func findLocalEvents(location:CLLocation, distance:Double, limit:Int, activity:String) {
         let query = PFQuery(className: "Events")
         query.whereKey("location", nearGeoPoint: PFGeoPoint(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude), withinKilometers: distance)
         if(activity.characters.count > 0) {
@@ -63,26 +105,65 @@ class DAL {
         } else {
             query.limit = limit
         }
-        return try query.findObjects();
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let objects = objects {
+                    for object in objects {
+                        // Do something
+                    }
+                }
+            } else {
+                print(error)
+            }
+        }
     }
     
-    func getEvent(eventId:String) throws -> NSArray {
+    func getEvent(eventId:String) {
         let query = PFQuery(className: "Events")
         query.whereKey("objectId", equalTo: eventId)
-        return try query.findObjects()
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let objects = objects {
+                    for object in objects {
+                        // Do something
+                    }
+                }
+            } else {
+                print(error)
+            }
+        }
     }
     
-    func getAttendingEvents(username:String) throws -> NSArray {
+    func getAttendingEvents(username:String) {
         let query = PFQuery(className: "Participates")
         query.whereKey("username", equalTo: username)
-        return try query.findObjects()
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let objects = objects {
+                    for object in objects {
+                        // Do something
+                    }
+                }
+            } else {
+                print(error)
+            }
+        }
     }
     
-    func getHostedEvents(username:String) throws -> NSArray {
+    func getHostedEvents(username:String) {
         let query = PFQuery(className: "")
         query.whereKey("username", equalTo: username)
-        let res = try query.findObjects()
-        return res
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let objects = objects {
+                    for object in objects {
+                        // Do something
+                    }
+                }
+            } else {
+                print(error)
+            }
+        }
     }
     
     func signUp(name:String, password:String, email:String) {

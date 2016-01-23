@@ -7,11 +7,24 @@
 //
 
 import UIKit
+import Parse
 
 class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    // To test Parse Functionality
+    /*
+    let testObject = PFObject(className: "TestObject")
+    testObject["foo"] = "bar"
+    testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+        print("Object has been saved.")
+    }
+    */
+    let dal = DAL()
+    //dal.test()
+    //dal.signUp("Noxoin", password: "hello", email: "dixoncheung01@gmail.com")
+    dal.login("Noxoin", password: "helo")
     // Do any additional setup after loading the view, typically from a nib.
   }
 

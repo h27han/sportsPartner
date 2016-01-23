@@ -27,6 +27,8 @@
 		4D7A64421C534EF800BE4A9D /* sportsPartnerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A64411C534EF800BE4A9D /* sportsPartnerUITests.swift */; };
 		932509431C53DFF700CFDB2D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932509411C53DFF700CFDB2D /* Bolts.framework */; };
 		932509441C53DFF700CFDB2D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 932509421C53DFF700CFDB2D /* Parse.framework */; };
+		9325094A1C53F76800CFDB2D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932509491C53F76800CFDB2D /* LoginController.swift */; };
+		9325094C1C54057800CFDB2D /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9325094B1C54057800CFDB2D /* RegisterController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		4D7A64431C534EF800BE4A9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		932509411C53DFF700CFDB2D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		932509421C53DFF700CFDB2D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		932509491C53F76800CFDB2D /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		9325094B1C54057800CFDB2D /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 				4D7A642A1C534EF800BE4A9D /* LaunchScreen.storyboard */,
 				4D7A642D1C534EF800BE4A9D /* Info.plist */,
 				0DFB99841C53626F009684F1 /* DAL.swift */,
+				932509491C53F76800CFDB2D /* LoginController.swift */,
+				9325094B1C54057800CFDB2D /* RegisterController.swift */,
 			);
 			path = sportsPartner;
 			sourceTree = "<group>";
@@ -310,7 +316,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9325094C1C54057800CFDB2D /* RegisterController.swift in Sources */,
 				0DFB99851C53626F009684F1 /* DAL.swift in Sources */,
+				9325094A1C53F76800CFDB2D /* LoginController.swift in Sources */,
 				4D7A64241C534EF800BE4A9D /* ViewController.swift in Sources */,
 				4D7A64221C534EF800BE4A9D /* AppDelegate.swift in Sources */,
 			);

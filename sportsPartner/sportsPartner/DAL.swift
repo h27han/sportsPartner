@@ -166,12 +166,13 @@ class DAL {
         }
     }
     
-    func signUp(name:String, password:String, email:String) {
+    func signUp(name:String, password:String, email:String)->Bool {
         //1
         let user = PFUser()
         
         print(user.username)
-        
+        var status = true
+		
         //2
         user.username = name
         user.password = password
@@ -182,24 +183,37 @@ class DAL {
             if (succeeded) {
             //The registration was successful, go to the wall
             //self.performSegueWithIdentifier(self.scrollViewWallSegue, sender: nil)
+				status = true
+				
                 print("Sign Up Successful")
             } else if let error = error {
+				status = false
             //Something bad has occurred
             //self.showErrorView(error)
                 print("Sign Up Failed")
+			
             }
         }
+		return status;
     }
     
-    func login(username:String, password:String) {
+	 func login(username:String, password:String)->Bool{
+		var status = false;
         PFUser.logInWithUsernameInBackground(username, password: password) { user, error in
             if user != nil {
                 //self.performSegueWithIdentifier(self.scrollViewWallSegue, sender: nil)
                 print("Login Successful")
+				status = true;
+				
             } else if let error = error {
                 //self.showErrorView(error)
                 print("Login Failed")
+				status = false;
+				
+				
             }
         }
+		return status
     }
+	
 }

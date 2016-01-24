@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pb5-hO-25t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pb5-hO-25t">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -204,10 +204,10 @@
             </objects>
             <point key="canvasLocation" x="3053.5" y="1339.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Controller-->
         <scene sceneID="f7R-Xd-BGy">
             <objects>
-                <viewController id="zB7-pz-Jlg" sceneMemberID="viewController">
+                <viewController id="zB7-pz-Jlg" customClass="SearchController" customModule="sportsPartner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y53-FA-a4M"/>
                         <viewControllerLayoutGuide type="bottom" id="qTo-Sr-5gd"/>
@@ -219,14 +219,31 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZK7-wa-XRO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                                 <items>
-                                    <navigationItem title="Search" prompt=" " id="Nru-Ak-kbP"/>
+                                    <navigationItem title="Search" prompt=" " id="Nru-Ak-kbP">
+                                        <barButtonItem key="rightBarButtonItem" image="More-50" id="oUu-QX-8ZC">
+                                            <connections>
+                                                <action selector="filters:" destination="zB7-pz-Jlg" id="TrM-AY-VuU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lIg-Ne-1Mq">
+                                <rect key="frame" x="126" y="87" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8da-Pj-Vkc">
+                                <rect key="frame" x="0.0" y="74" width="375" height="544"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="WmG-dN-vnT"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="filterTable" destination="lIg-Ne-1Mq" id="nLM-oz-Ind"/>
+                        <outlet property="mapView" destination="8da-Pj-Vkc" id="VqF-Yl-LTS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PyM-UL-ROk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -298,6 +315,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="More-50" width="25" height="25"/>
         <image name="Settings-50" width="25" height="25"/>
         <image name="event" width="25" height="25"/>
         <image name="user" width="25" height="25"/>

@@ -24,6 +24,8 @@
 		0DFB998B1C544D32009684F1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFB998A1C544D32009684F1 /* MapKit.framework */; };
 		0DFB998D1C5453D1009684F1 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB998C1C5453D1009684F1 /* SearchController.swift */; };
 		0DFB998F1C54AA43009684F1 /* EventDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB998E1C54AA43009684F1 /* EventDetailed.swift */; };
+		4D6AAB931C54F96000CACEC1 /* CreatePostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6AAB921C54F96000CACEC1 /* CreatePostTableViewController.swift */; };
+		4D6AAB951C54F96A00CACEC1 /* EventMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6AAB941C54F96A00CACEC1 /* EventMapViewController.swift */; };
 		4D7A64221C534EF800BE4A9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A64211C534EF800BE4A9D /* AppDelegate.swift */; };
 		4D7A64241C534EF800BE4A9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A64231C534EF800BE4A9D /* ViewController.swift */; };
 		4D7A64271C534EF800BE4A9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7A64251C534EF800BE4A9D /* Main.storyboard */; };
@@ -74,6 +76,8 @@
 		0DFB998A1C544D32009684F1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0DFB998C1C5453D1009684F1 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		0DFB998E1C54AA43009684F1 /* EventDetailed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailed.swift; sourceTree = "<group>"; };
+		4D6AAB921C54F96000CACEC1 /* CreatePostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostTableViewController.swift; sourceTree = "<group>"; };
+		4D6AAB941C54F96A00CACEC1 /* EventMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapViewController.swift; sourceTree = "<group>"; };
 		4D7A641E1C534EF800BE4A9D /* sportsPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sportsPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7A64211C534EF800BE4A9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D7A64231C534EF800BE4A9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 		4D7A64201C534EF800BE4A9D /* sportsPartner */ = {
 			isa = PBXGroup;
 			children = (
+				4D6AAB921C54F96000CACEC1 /* CreatePostTableViewController.swift */,
+				4D6AAB941C54F96A00CACEC1 /* EventMapViewController.swift */,
 				4D7A64211C534EF800BE4A9D /* AppDelegate.swift */,
 				4D7A64231C534EF800BE4A9D /* ViewController.swift */,
 				4D7A64251C534EF800BE4A9D /* Main.storyboard */,
@@ -349,10 +355,12 @@
 				02B284B91C54672900DEF215 /* EventController.swift in Sources */,
 				02B284BC1C54681F00DEF215 /* EventTableView.swift in Sources */,
 				9325094A1C53F76800CFDB2D /* LoginController.swift in Sources */,
+				4D6AAB951C54F96A00CACEC1 /* EventMapViewController.swift in Sources */,
 				4D7A64241C534EF800BE4A9D /* ViewController.swift in Sources */,
 				4D7A64221C534EF800BE4A9D /* AppDelegate.swift in Sources */,
 				9325094E1C54536200CFDB2D /* ProfileController.swift in Sources */,
 				02B5E4EC1C54AB9B00B923B9 /* dynamicCell.swift in Sources */,
+				4D6AAB931C54F96000CACEC1 /* CreatePostTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

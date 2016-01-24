@@ -8,7 +8,7 @@
 
 import UIKit
 import Parse
-class RegisterController: UIViewController {
+class RegisterController: UIViewController,UITextFieldDelegate {
 
 	@IBOutlet weak var email: UITextField!
 	@IBOutlet weak var password: UITextField!
@@ -16,7 +16,9 @@ class RegisterController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		password.delegate = self
+		account.delegate = self
+		email.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -24,6 +26,11 @@ class RegisterController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	func textFieldShouldReturn(textField: UITextField) -> Bool {
+		self.view.endEditing(true)
+		return false
+	}
 	
 	@IBAction func back(sender: AnyObject) {
 		performSegueWithIdentifier("Login", sender: self)

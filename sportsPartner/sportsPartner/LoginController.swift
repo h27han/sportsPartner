@@ -8,7 +8,7 @@
 import Parse
 import UIKit
 
-class LoginController: UIViewController {
+class LoginController: UIViewController,UITextFieldDelegate {
 
 	@IBOutlet weak var account: UITextField!
 	@IBOutlet weak var password: UITextField!
@@ -18,8 +18,16 @@ class LoginController: UIViewController {
         super.viewDidLoad()
 		
         // Do any additional setup after loading the view.
-    }
+		self.account.delegate = self
+		self.password.delegate = self
 
+
+    }
+	func textFieldShouldReturn(textField: UITextField) -> Bool {
+		self.view.endEditing(true)
+		return false
+	}
+	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

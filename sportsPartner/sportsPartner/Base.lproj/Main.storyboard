@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="q1h-7A-v0O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pb5-hO-25t">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -835,9 +835,9 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="ZiR-7b-I46"/>
                                                     <exclude reference="H5H-dz-7Pp"/>
                                                     <exclude reference="Tny-HB-wRc"/>
+                                                    <exclude reference="ZiR-7b-I46"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -947,9 +947,9 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="wYG-t9-DrA"/>
-                                                    <exclude reference="vwc-wV-exx"/>
                                                     <exclude reference="cK2-Vg-HGp"/>
+                                                    <exclude reference="vwc-wV-exx"/>
+                                                    <exclude reference="wYG-t9-DrA"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1059,9 +1059,9 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="rnM-Pi-sjh"/>
-                                                    <exclude reference="8jS-J5-1uO"/>
                                                     <exclude reference="0vr-mh-Gbc"/>
+                                                    <exclude reference="8jS-J5-1uO"/>
+                                                    <exclude reference="rnM-Pi-sjh"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

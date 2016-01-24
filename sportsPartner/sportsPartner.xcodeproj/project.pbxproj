@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02B284B91C54672900DEF215 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B284B71C54672900DEF215 /* EventController.swift */; };
+		02B284BC1C54681F00DEF215 /* EventTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B284BB1C54681F00DEF215 /* EventTableView.swift */; };
 		0DE1F4A11C535B590065F846 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1F4991C535B590065F846 /* AudioToolbox.framework */; };
 		0DE1F4A21C535B590065F846 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1F49A1C535B590065F846 /* CFNetwork.framework */; };
 		0DE1F4A31C535B590065F846 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1F49B1C535B590065F846 /* CoreGraphics.framework */; };
@@ -54,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02B284B71C54672900DEF215 /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
+		02B284BB1C54681F00DEF215 /* EventTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableView.swift; sourceTree = "<group>"; };
 		0DE1F4991C535B590065F846 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0DE1F49A1C535B590065F846 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		0DE1F49B1C535B590065F846 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -166,6 +170,8 @@
 				4D7A64211C534EF800BE4A9D /* AppDelegate.swift */,
 				4D7A64231C534EF800BE4A9D /* ViewController.swift */,
 				4D7A64251C534EF800BE4A9D /* Main.storyboard */,
+				02B284B71C54672900DEF215 /* EventController.swift */,
+				02B284BB1C54681F00DEF215 /* EventTableView.swift */,
 				4D7A64281C534EF800BE4A9D /* Assets.xcassets */,
 				4D7A642A1C534EF800BE4A9D /* LaunchScreen.storyboard */,
 				4D7A642D1C534EF800BE4A9D /* Info.plist */,
@@ -337,6 +343,8 @@
 				0DFB998D1C5453D1009684F1 /* SearchController.swift in Sources */,
 				0DFB99851C53626F009684F1 /* DAL.swift in Sources */,
 				0DFB998F1C54AA43009684F1 /* EventDetailed.swift in Sources */,
+				02B284B91C54672900DEF215 /* EventController.swift in Sources */,
+				02B284BC1C54681F00DEF215 /* EventTableView.swift in Sources */,
 				9325094A1C53F76800CFDB2D /* LoginController.swift in Sources */,
 				4D7A64241C534EF800BE4A9D /* ViewController.swift in Sources */,
 				4D7A64221C534EF800BE4A9D /* AppDelegate.swift in Sources */,

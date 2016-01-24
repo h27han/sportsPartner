@@ -118,7 +118,7 @@ class ProfileController: UIViewController,UIImagePickerControllerDelegate, UINav
 		alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
 			// Enter the textfiled customization code here.
 			loginTextField = textField
-			loginTextField?.placeholder = "Enter your login ID"
+			loginTextField?.placeholder = "Enter your email"
 		}
 		presentViewController(alertController, animated: true, completion: nil)
 		

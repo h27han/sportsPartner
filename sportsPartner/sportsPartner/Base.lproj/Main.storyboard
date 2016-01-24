@@ -378,8 +378,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Skill Rating (out of 10)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rN-7F-IwN">
-                                <rect key="frame" x="97" y="148" width="195" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skill Rating (out of 10)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rN-7F-IwN">
+                                <rect key="frame" x="111" y="156" width="167" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -492,6 +492,11 @@
                                 <rect key="frame" x="16" y="221" width="337" height="123"/>
                                 <animations/>
                             </pickerView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gyr-Cx-2II">
+                                <rect key="frame" x="0.0" y="74" width="375" height="44"/>
+                                <animations/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -512,6 +517,7 @@
                         <outlet property="score4" destination="be9-a4-Qxg" id="yrv-eN-Rs2"/>
                         <outlet property="score5" destination="ReL-dT-Ccx" id="09o-pB-Ihc"/>
                         <outlet property="score6" destination="0zB-1r-etd" id="wJp-PN-Dyu"/>
+                        <outlet property="searchBar" destination="gyr-Cx-2II" id="LuH-Ue-g5a"/>
                         <outlet property="sport1" destination="5rO-DF-m9y" id="eoy-92-0Wv"/>
                         <outlet property="sport2" destination="H8d-eJ-SbS" id="dgm-dg-8WN"/>
                         <outlet property="sport3" destination="NHa-eE-rAC" id="8T4-Rt-U7p"/>

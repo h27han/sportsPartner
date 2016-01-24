@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "sportsPartner/RateController.swift"
-            timestampString = "475309927.25057"
+            timestampString = "475311397.505014"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "goBack(_:)"
             landmarkType = "5">
          </BreakpointContent>

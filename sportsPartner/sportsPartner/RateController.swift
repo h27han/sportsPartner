@@ -8,8 +8,9 @@
 
 import UIKit
 import Parse
-class RateController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class RateController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate,UISearchBarDelegate {
 
+	@IBOutlet weak var searchBar: UISearchBar!
 	
 	@IBOutlet weak var button: UIButton!
 	@IBOutlet weak var label1: UILabel!
@@ -68,20 +69,18 @@ class RateController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 	}
 	
 	
-	
-	
-	
-	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-		self.pickerView.dataSource = self
-		self.pickerView.delegate = self
-        // Do any additional setup after loading the view.
+	func loadPlayerRating(name: String){
+		
+		var aVariable = ""
+		if (name==""){
+			let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+			aVariable = appDelegate.userName
+		}else{
+			aVariable = name
+		}
 		
 		
-		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-		let aVariable = appDelegate.userName
+		
 		
 		let query = PFQuery(className: "Ratings")
 		query.whereKey("userReviewee", equalTo: aVariable)
@@ -123,7 +122,7 @@ class RateController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 				}
 			}
 		}
-
+		
 		let query3 = PFQuery(className: "Ratings")
 		query3.whereKey("userReviewee", equalTo: aVariable)
 		query3.whereKey("Activity", equalTo: "Tennis")
@@ -203,6 +202,26 @@ class RateController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 				}
 			}
 		}
+	}
+	
+	
+	func searchBarSearchButtonClicked( searchBar: UISearchBar)
+	{
+		var searched = searchBar.text
+		loadPlayerRating(searched!)
+	}
+	
+	
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+		self.pickerView.dataSource = self
+		self.pickerView.delegate = self
+        // Do any additional setup after loading the view.
+		
+		searchBar.showsScopeBar = true
+		searchBar.delegate = self
+		loadPlayerRating("")
     }
 
     override func didReceiveMemoryWarning() {

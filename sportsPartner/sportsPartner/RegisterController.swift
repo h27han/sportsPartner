@@ -50,6 +50,7 @@ class RegisterController: UIViewController {
 				
 				print("Sign Up Successful")
 				
+				
 				let alert = UIAlertController(title: "Register Successful!", message: "Back to login", preferredStyle: UIAlertControllerStyle.Alert)
 				
 				// add an action (button)

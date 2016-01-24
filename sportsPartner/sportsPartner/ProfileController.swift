@@ -11,6 +11,7 @@ import Parse
 
 class ProfileController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
 
+	@IBOutlet weak var userNameLabel: UILabel!
 	@IBOutlet weak var switchOn: UISwitch!
 	@IBOutlet weak var photo: UIImageView!
 	@IBOutlet weak var userName: UILabel!
@@ -37,6 +38,12 @@ class ProfileController: UIViewController,UIImagePickerControllerDelegate, UINav
 		
 		self.picker.dataSource = self
 		self.picker.delegate = self
+		
+		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let aVariable = appDelegate.userName
+		userNameLabel.text = aVariable
+		
+		
     }
 
 	func imagePickerControllerDidCancel(picker: UIImagePickerController) {

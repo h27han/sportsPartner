@@ -290,6 +290,7 @@
                         <outlet property="picker" destination="qhY-29-0g6" id="KK4-mo-zvU"/>
                         <outlet property="switchOn" destination="ydD-FS-9os" id="hop-pj-Gof"/>
                         <outlet property="userName" destination="XPz-XP-lMg" id="OhI-IO-KTY"/>
+                        <outlet property="userNameLabel" destination="XPz-XP-lMg" id="n3e-LO-hcW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2b-8g-Sgy" userLabel="First Responder" sceneMemberID="firstResponder"/>

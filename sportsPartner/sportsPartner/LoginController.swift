@@ -33,7 +33,12 @@ class LoginController: UIViewController {
 		
 		PFUser.logInWithUsernameInBackground(Useraccount, password: Userpassword) { user, error in
 			if user != nil {
-				//self.performSegueWithIdentifier(self.scrollViewWallSegue, sender: nil)
+				
+				
+				let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+				appDelegate.userName = Useraccount;
+				
+				
 				self.performSegueWithIdentifier("MainApp", sender: self)
 				
 			} else if let error = error {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 import Parse
 
 class EventController: UIViewController, UITableViewDataSource, UITableViewDelegate{
@@ -18,12 +19,23 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     @IBOutlet weak var tableView: EventTableView!
     
     
-    var events = []
+    var event0 = []
+    var event1 = []
+    var event2 = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.tableFooterView = UIView(frame: CGRect.zero)
-        // Do any additional setup after loading the view.
+        
+        
+        // initialization
+
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,17 +43,53 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    /*
+    
     func getActiveEvents(username:String) {
-        let query = PFQuery(className: "")
-        query.whereKey("userCreated", equalTo: username)
-        query.orderByDescending("", less: )
-        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+        var resArray: [PFObject] = []
+        let query1 = PFQuery(className: "Events")
+        query1.whereKey("userCreated", equalTo: username)
+        query1.orderByDescending("endTime")
+        query1.findObjectsInBackgroundWithBlock { (objects1: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
-                if let objects = objects {
-                    for object in objects {
-                        // Do something
-                    }
+                //if let objects1 = objects1 {
+                    let query2 = PFQuery(className: "Participates")
+                    query2.whereKey("username", equalTo: username)
+                    query2.orderByDescending("endTime")
+                    query2.findObjectsInBackgroundWithBlock { (objects2: [PFObject]?, error: NSError?) -> Void in
+                        if error == nil {
+                            var x = 0
+                            var y = 0
+
+                            //if let objects2 = objects2 {
+                                for _ in 0..<(objects1!.count + objects2!.count) {
+                                    if(x == objects1!.count) {
+                                        resArray.append(objects2![y])
+                                        y++;
+                                    } else if (y == objects2!.count) {
+                                        resArray.append(objects1![x])
+                                        x++;
+                                    } else {
+                                        let a = objects1![x]
+                                        let b = objects2![y]
+                                        if((a["endTime"] as! NSDate).compare(b["endTime"] as! NSDate) == NSComparisonResult.OrderedDescending) {
+                                            resArray.append(a)
+                                            x++;
+                                        } else {
+                                            resArray.append(b)
+                                            y++;
+                                        }
+                                    }
+                                }
+                                //resArray is ready
+                                self.event0 = resArray
+                            
+                                self.tableView.reloadData()
+                            
+                            //}
+                        } else {
+                            print(error)
+                        }
+                //    }
                 }
             } else {
                 print(error)
@@ -49,18 +97,18 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
     }
 
-    */
+    
     
     func getHostedEvents(username:String) {
-        let query = PFQuery(className: "")
+        let query = PFQuery(className: "Events")
         query.whereKey("userCreated", equalTo: username)
-        query.orderByDescending("", less: )
+        query.orderByDescending("endTime")
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 if let objects = objects {
-                    for object in objects {
-                        // Do something
-                    }
+                    self.event1 = objects
+                    
+                    self.tableView.reloadData()
                 }
             } else {
                 print(error)
@@ -68,18 +116,51 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
     }
     
-    /*
-    func getAllEvents(username:String) {
-        getgetHostedEvents
-        let query = PFQuery(className: "")
-        query.whereKey("userCreated", equalTo: username)
-        query.orderByDescending("startTime")
-        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+    
+    func getPastEvents(username:String) {
+        var resArray: [PFObject] = []
+        let query1 = PFQuery(className: "Events")
+        query1.whereKey("userCreated", equalTo: username)
+        query1.orderByDescending("endTime")
+        query1.findObjectsInBackgroundWithBlock { (objects1: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
-                if let objects = objects {
-                    for object in objects {
-                        // Do something
+                //if let objects1 = objects1 {
+                let query2 = PFQuery(className: "Participates")
+                query2.whereKey("username", equalTo: username)
+                query2.orderByDescending("endTime")
+                query2.findObjectsInBackgroundWithBlock { (objects2: [PFObject]?, error: NSError?) -> Void in
+                    if error == nil {
+                        var x = 0
+                        var y = 0
+                        //if let objects2 = objects2 {
+                        for _ in 0..<(objects1!.count + objects2!.count) {
+                            if(x == objects1!.count) {
+                                resArray.append(objects2![y])
+                                y++;
+                            } else if (y == objects2!.count) {
+                                resArray.append(objects1![x])
+                                x++;
+                            } else {
+                                let a = objects1![x]
+                                let b = objects2![y]
+                                if((a["endTime"] as! NSDate).compare(b["endTime"] as! NSDate) == NSComparisonResult.OrderedDescending) {
+                                    resArray.append(a)
+                                    x++;
+                                } else {
+                                    resArray.append(b)
+                                    y++;
+                                }
+                            }
+                        }
+                        //resArray is ready
+                        self.event2 = resArray
+                        
+                        self.tableView.reloadData()
+                        //}
+                    } else {
+                        print(error)
                     }
+                    //    }
                 }
             } else {
                 print(error)
@@ -87,62 +168,75 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         }
     }
     
-    */
+    
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        var returnValue = 0
-        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        var returnValue = 0
         
         switch(eventType.selectedSegmentIndex)
         {
         case 0:
-            //getActiveEvents(appDelegate.userName)
-            returnValue = events.count
+            getActiveEvents(appDelegate.userName)
+            returnValue = event0.count
             break
             
         case 1:
             getHostedEvents(appDelegate.userName)
-            returnValue = events.count
+            returnValue = event1.count
             break
 
         case 2:
-            //getPastEvents(appDelegate.userName)
-            returnValue = events.count
+            getPastEvents(appDelegate.userName)
+            returnValue = event2.count
             break
             
         default:
             break
         }
-        
         return returnValue
         
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let eventCell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath)
+        let eventCell = tableView.dequeueReusableCellWithIdentifier("eventCell", forIndexPath: indexPath) as!  dynamicCell
+        
+        var activity = "", title = "", maxParticipants = 0, description = ""
         
         switch(eventType.selectedSegmentIndex)
         {
         case 0:
-            let object = events[indexPath.row]
-            eventCell.row1.text = object.valueForKey("activity") as! String!
-            eventCell.row2.text = event[hotelName]
+            let object = event0[indexPath.row]
+            activity = object["activity"] as! String
+            title = object["title"] as! String
+            maxParticipants = object["maxParticipants"] as! Int
+            description = object["description"] as! String
+            eventCell.row1.text = activity.isEmpty ? title : activity + "-" + title
+            eventCell.row2.text = maxParticipants == 0 ? description : "\(maxParticipants) people maximum \(description)"
             break
             
         case 1:
-            /*let hotelName = hotelNames[indexPath.row]
-            eventCell.nameLabel.text = hotelName
-            eventCell.addressLabel.text = list2[hotelName]*/
+            
+            let object = event1[indexPath.row]
+            activity = object["activity"] as! String
+            title = object["title"] as! String
+            maxParticipants = object["maxParticipants"] as! Int
+            description = object["description"] as! String
+            eventCell.row1.text = activity.isEmpty ? title : activity + "-" + title
+            eventCell.row2.text = maxParticipants == 0 ? description : "\(maxParticipants) people maximum \(description)"
+            
             break
             
         case 2:
-            /*
-            let hotelName = hotelNames[indexPath.row]
-            eventCell.nameLabel.text = hotelName
-            eventCell.addressLabel.text = list3[hotelName]*/
+            let object = event2[indexPath.row]
+            activity = object["activity"] as! String
+            title = object["title"] as! String
+            maxParticipants = object["maxParticipants"] as! Int
+            description = object["description"] as! String
+            eventCell.row1.text = activity.isEmpty ? title : activity + "-" + title
+            eventCell.row2.text = maxParticipants == 0 ? description : "\(maxParticipants) people maximum \(description)"
             break
             
         default:

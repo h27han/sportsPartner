@@ -36,10 +36,10 @@ class SearchController: UIViewController, CLLocationManagerDelegate, MKMapViewDe
         super.viewDidLoad()
         
         locationManager = CLLocationManager()
+		locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.distanceFilter = kCLDistanceFilterNone;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         //locationManager.startMonitoringSignificantLocationChanges()
         

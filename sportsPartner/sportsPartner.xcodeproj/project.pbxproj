@@ -18,6 +18,9 @@
 		0DE1F4AA1C535B650065F846 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1F4A91C535B650065F846 /* libz.tbd */; };
 		0DE1F4AC1C535B710065F846 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1F4AB1C535B710065F846 /* libsqlite3.tbd */; };
 		0DFB99851C53626F009684F1 /* DAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB99841C53626F009684F1 /* DAL.swift */; };
+		0DFB998B1C544D32009684F1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFB998A1C544D32009684F1 /* MapKit.framework */; };
+		0DFB998D1C5453D1009684F1 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB998C1C5453D1009684F1 /* SearchController.swift */; };
+		0DFB998F1C54AA43009684F1 /* EventDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFB998E1C54AA43009684F1 /* EventDetailed.swift */; };
 		4D7A64221C534EF800BE4A9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A64211C534EF800BE4A9D /* AppDelegate.swift */; };
 		4D7A64241C534EF800BE4A9D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7A64231C534EF800BE4A9D /* ViewController.swift */; };
 		4D7A64271C534EF800BE4A9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D7A64251C534EF800BE4A9D /* Main.storyboard */; };
@@ -62,6 +65,9 @@
 		0DE1F4A91C535B650065F846 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0DE1F4AB1C535B710065F846 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		0DFB99841C53626F009684F1 /* DAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAL.swift; sourceTree = "<group>"; };
+		0DFB998A1C544D32009684F1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0DFB998C1C5453D1009684F1 /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		0DFB998E1C54AA43009684F1 /* EventDetailed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailed.swift; sourceTree = "<group>"; };
 		4D7A641E1C534EF800BE4A9D /* sportsPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sportsPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D7A64211C534EF800BE4A9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D7A64231C534EF800BE4A9D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DFB998B1C544D32009684F1 /* MapKit.framework in Frameworks */,
 				0DE1F4AC1C535B710065F846 /* libsqlite3.tbd in Frameworks */,
 				0DE1F4AA1C535B650065F846 /* libz.tbd in Frameworks */,
 				0DE1F4A11C535B590065F846 /* AudioToolbox.framework in Frameworks */,
@@ -123,6 +130,7 @@
 		4D7A64151C534EF800BE4A9D = {
 			isa = PBXGroup;
 			children = (
+				0DFB998A1C544D32009684F1 /* MapKit.framework */,
 				932509411C53DFF700CFDB2D /* Bolts.framework */,
 				932509421C53DFF700CFDB2D /* Parse.framework */,
 				0DE1F4AB1C535B710065F846 /* libsqlite3.tbd */,
@@ -166,6 +174,8 @@
 				9325094B1C54057800CFDB2D /* RegisterController.swift */,
 				9325094D1C54536200CFDB2D /* ProfileController.swift */,
 				9325094F1C548FBF00CFDB2D /* RateController.swift */,
+				0DFB998C1C5453D1009684F1 /* SearchController.swift */,
+				0DFB998E1C54AA43009684F1 /* EventDetailed.swift */,
 			);
 			path = sportsPartner;
 			sourceTree = "<group>";
@@ -324,7 +334,9 @@
 			files = (
 				9325094C1C54057800CFDB2D /* RegisterController.swift in Sources */,
 				932509501C548FBF00CFDB2D /* RateController.swift in Sources */,
+				0DFB998D1C5453D1009684F1 /* SearchController.swift in Sources */,
 				0DFB99851C53626F009684F1 /* DAL.swift in Sources */,
+				0DFB998F1C54AA43009684F1 /* EventDetailed.swift in Sources */,
 				9325094A1C53F76800CFDB2D /* LoginController.swift in Sources */,
 				4D7A64241C534EF800BE4A9D /* ViewController.swift in Sources */,
 				4D7A64221C534EF800BE4A9D /* AppDelegate.swift in Sources */,

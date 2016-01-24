@@ -12,7 +12,7 @@ import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-	var userName="test123"
+	var userName=""
 	
   var window: UIWindow?
 

@@ -30,6 +30,7 @@
 		9325094A1C53F76800CFDB2D /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932509491C53F76800CFDB2D /* LoginController.swift */; };
 		9325094C1C54057800CFDB2D /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9325094B1C54057800CFDB2D /* RegisterController.swift */; };
 		9325094E1C54536200CFDB2D /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9325094D1C54536200CFDB2D /* ProfileController.swift */; };
+		932509501C548FBF00CFDB2D /* RateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9325094F1C548FBF00CFDB2D /* RateController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		932509491C53F76800CFDB2D /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		9325094B1C54057800CFDB2D /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		9325094D1C54536200CFDB2D /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		9325094F1C548FBF00CFDB2D /* RateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				932509491C53F76800CFDB2D /* LoginController.swift */,
 				9325094B1C54057800CFDB2D /* RegisterController.swift */,
 				9325094D1C54536200CFDB2D /* ProfileController.swift */,
+				9325094F1C548FBF00CFDB2D /* RateController.swift */,
 			);
 			path = sportsPartner;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9325094C1C54057800CFDB2D /* RegisterController.swift in Sources */,
+				932509501C548FBF00CFDB2D /* RateController.swift in Sources */,
 				0DFB99851C53626F009684F1 /* DAL.swift in Sources */,
 				9325094A1C53F76800CFDB2D /* LoginController.swift in Sources */,
 				4D7A64241C534EF800BE4A9D /* ViewController.swift in Sources */,

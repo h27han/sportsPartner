@@ -635,7 +635,13 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tBV-Bt-3do">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                                 <items>
-                                    <navigationItem title="Event" prompt=" " id="Aab-s5-K1u"/>
+                                    <navigationItem title="Event" prompt=" " id="Aab-s5-K1u">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="DzD-zM-S2X">
+                                            <connections>
+                                                <action selector="onRefreshClicked:" destination="wPY-9B-8Fw" id="7QP-Us-ieh"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="exg-72-5u2">
@@ -646,20 +652,41 @@
                                     <segment title="My events"/>
                                     <segment title="Past"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onSegmentChanged:" destination="wPY-9B-8Fw" eventType="valueChanged" id="QHj-Cq-kxT"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AD5-vH-Qnd" customClass="EventTableView" customModule="sportsPartner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="127" width="375" height="491"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" id="VID-Mc-aLO">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VID-Mc-aLO" id="9yR-oC-xFG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wPY-9B-8Fw" id="Vuu-qs-Hwe"/>
+                                    <outlet property="delegate" destination="wPY-9B-8Fw" id="F7w-KV-Mtq"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Events" image="event" id="07t-Yh-7b5"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="eventType" destination="exg-72-5u2" id="Y6G-OV-Z3p"/>
+                        <outlet property="tableView" destination="AD5-vH-Qnd" id="lb7-pW-VBL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDc-wb-9sl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2647.5" y="1319.5"/>
+            <point key="canvasLocation" x="2623.5" y="1281.5"/>
         </scene>
     </scenes>
     <resources>

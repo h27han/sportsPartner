@@ -327,7 +327,7 @@
             </objects>
             <point key="canvasLocation" x="2573.5" y="1313.5"/>
         </scene>
-        <!--Settings-->
+        <!--Rating-->
         <scene sceneID="Ot4-Ab-l7x">
             <objects>
                 <viewController id="Wb3-Hw-LA4" sceneMemberID="viewController">
@@ -343,14 +343,34 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                                 <animations/>
                                 <items>
-                                    <navigationItem title="Settings" prompt=" " id="fSQ-Hs-VxR"/>
+                                    <navigationItem title="Rating" prompt=" " id="fSQ-Hs-VxR"/>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsQ-rd-h1L">
+                                <rect key="frame" x="69" y="511" width="231" height="75"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Rate my Partnership!"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Just finished a game?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ml2-Xe-jvR">
+                                <rect key="frame" x="76" y="489" width="222" height="31"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rN-7F-IwN">
+                                <rect key="frame" x="149" y="97" width="77" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="Settings-50" id="u5P-Bc-Oyh"/>
+                    <tabBarItem key="tabBarItem" title="Rating" image="Settings-50" id="u5P-Bc-Oyh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lIC-LQ-Qyx" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,10 +11,9 @@ import Parse
 class RegisterController: UIViewController {
 
 	@IBOutlet weak var email: UITextField!
-	
 	@IBOutlet weak var password: UITextField!
-	
 	@IBOutlet weak var account: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -30,6 +30,7 @@ class SearchController: UIViewController, CLLocationManagerDelegate, MKMapViewDe
     
     var locationManager : CLLocationManager!;
     var prevCLLocation : CLLocation!;
+    var lastEventId : String!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,24 +51,20 @@ class SearchController: UIViewController, CLLocationManagerDelegate, MKMapViewDe
     }
 
     @IBAction func filters(sender: AnyObject) {
+        print("Filters")
         filterTable.hidden = (filterTable.hidden==true) ? false : true
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation)
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
-        let location = newLocation
+        let location = locations.last! as CLLocation
         let lat = location.coordinate.latitude
         let long = location.coordinate.longitude
         
-        if(oldLocation.coordinate.latitude==lat && oldLocation.coordinate.longitude==long) {
-            return;
-        }
-        /*
         if(prevCLLocation != nil && prevCLLocation.coordinate.latitude == lat && prevCLLocation.coordinate.longitude == long) {
             return;
         }
         prevCLLocation = CLLocation(latitude: lat, longitude: long)
-*/
         
         let center = CLLocationCoordinate2D(latitude: lat, longitude: long)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
@@ -110,9 +107,8 @@ class SearchController: UIViewController, CLLocationManagerDelegate, MKMapViewDe
     }
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-        print("You clicked some shit")
         if(view.annotation is MyAnnotation) {
-            print("oooo that's prtty nice I still have good info")
+            lastEventId = (view.annotation as! MyAnnotation).id
         }
     }
     
@@ -130,10 +126,6 @@ class SearchController: UIViewController, CLLocationManagerDelegate, MKMapViewDe
             anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             //anView!.animatesDrop = true
             
-            // Add a detail disclosure button to the callout.
-            let rightButton = UIButton(type: UIButtonType.ContactAdd)
-            rightButton.addTarget(self, action: "joinEvent:", forControlEvents: UIControlEvents.TouchUpInside)
-            anView!.rightCalloutAccessoryView = rightButton;
             if annotation.isKindOfClass(MyAnnotation)
             {
                 let annotation = annotation as! MyAnnotation
@@ -150,12 +142,16 @@ class SearchController: UIViewController, CLLocationManagerDelegate, MKMapViewDe
                 } else if (annotation.activity == "Tennis") {
                     anView!.image = UIImage(named: "Tennis-48.png")
                 } else if (annotation.activity == "Ultimate Frisbee" ) {
-                    anView!.image = UIImage(named: "Frisbess-48.png")
+                    anView!.image = UIImage(named: "Frisbee-48.png")
                 } else if (annotation.activity == "Soccer") {
                     anView!.image = UIImage(named: "Football-48.png")
                 }
             }  // if
             anView!.canShowCallout = true
+            // Add a detail disclosure button to the callout.
+            let rightButton = UIButton(type: UIButtonType.DetailDisclosure)
+            rightButton.addTarget(self, action: "joinEvent:", forControlEvents: UIControlEvents.TouchUpInside)
+            anView!.rightCalloutAccessoryView = rightButton;
         }
         else {
             //we are re-using a view, update its annotation reference...
@@ -165,10 +161,23 @@ class SearchController: UIViewController, CLLocationManagerDelegate, MKMapViewDe
         return anView
     }
     
+    @IBAction func toggleFilter(sender: AnyObject) {
+        print("Clicked on toggleFilter")
+        filterTable.hidden = (filterTable.hidden==true) ? false : true
+    }
     @IBAction func joinEvent ( sender:AnyObject) {
         print("You wanted to join the Event. Too bad not yet!!!")
+        performSegueWithIdentifier("eventDetailedSegue", sender: self)
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "eventDetailedSegue") {
+            let svc = segue.destinationViewController as! EventDetailed;
+            
+            svc.toPass = lastEventId;
+            
+        }
+    }
     /*
     // MARK: - Navigation
 

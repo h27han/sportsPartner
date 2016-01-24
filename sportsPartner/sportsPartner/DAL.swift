@@ -140,8 +140,7 @@ class DAL {
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 if let objects = objects {
-                    for object in objects {
-                        // Do something
+                    for object in objects { 
                     }
                 }
             } else {

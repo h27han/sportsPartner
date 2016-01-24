@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class EventController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 
@@ -16,9 +17,8 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     @IBOutlet weak var tableView: EventTableView!
     
-    let list1:[String] = ["la","la"]
-    let list2:[String] = ["1","2", "3"]
-    let list3:[String] = ["1","2", "3", "4"]
+    
+    var events = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,23 +31,86 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         // Dispose of any resources that can be recreated.
     }
     
+    /*
+    func getActiveEvents(username:String) {
+        let query = PFQuery(className: "")
+        query.whereKey("userCreated", equalTo: username)
+        query.orderByDescending("", less: )
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let objects = objects {
+                    for object in objects {
+                        // Do something
+                    }
+                }
+            } else {
+                print(error)
+            }
+        }
+    }
+
+    */
+    
+    func getHostedEvents(username:String) {
+        let query = PFQuery(className: "")
+        query.whereKey("userCreated", equalTo: username)
+        query.orderByDescending("", less: )
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let objects = objects {
+                    for object in objects {
+                        // Do something
+                    }
+                }
+            } else {
+                print(error)
+            }
+        }
+    }
+    
+    /*
+    func getAllEvents(username:String) {
+        getgetHostedEvents
+        let query = PFQuery(className: "")
+        query.whereKey("userCreated", equalTo: username)
+        query.orderByDescending("startTime")
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let objects = objects {
+                    for object in objects {
+                        // Do something
+                    }
+                }
+            } else {
+                print(error)
+            }
+        }
+    }
+    
+    */
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var returnValue = 0
         
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
         switch(eventType.selectedSegmentIndex)
         {
         case 0:
-            returnValue = list1.count
+            //getActiveEvents(appDelegate.userName)
+            returnValue = events.count
             break
             
         case 1:
-            returnValue = list2.count
+            getHostedEvents(appDelegate.userName)
+            returnValue = events.count
             break
 
         case 2:
-            returnValue = list3.count
+            //getPastEvents(appDelegate.userName)
+            returnValue = events.count
             break
             
         default:
@@ -64,21 +127,28 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         switch(eventType.selectedSegmentIndex)
         {
         case 0:
-            eventCell.textLabel!.text = list1[indexPath.row]
+            let object = events[indexPath.row]
+            eventCell.row1.text = object.valueForKey("activity") as! String!
+            eventCell.row2.text = event[hotelName]
             break
             
         case 1:
-            eventCell.textLabel!.text = list2[indexPath.row]
+            /*let hotelName = hotelNames[indexPath.row]
+            eventCell.nameLabel.text = hotelName
+            eventCell.addressLabel.text = list2[hotelName]*/
             break
             
         case 2:
-            eventCell.textLabel!.text = list3[indexPath.row]
+            /*
+            let hotelName = hotelNames[indexPath.row]
+            eventCell.nameLabel.text = hotelName
+            eventCell.addressLabel.text = list3[hotelName]*/
             break
             
         default:
             break
         }
-        
+
         return eventCell
     }
  

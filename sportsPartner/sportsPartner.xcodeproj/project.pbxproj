@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		02B284B91C54672900DEF215 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B284B71C54672900DEF215 /* EventController.swift */; };
 		02B284BC1C54681F00DEF215 /* EventTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B284BB1C54681F00DEF215 /* EventTableView.swift */; };
+		02B5E4EC1C54AB9B00B923B9 /* dynamicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B5E4EB1C54AB9B00B923B9 /* dynamicCell.swift */; };
 		0DE1F4A11C535B590065F846 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1F4991C535B590065F846 /* AudioToolbox.framework */; };
 		0DE1F4A21C535B590065F846 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1F49A1C535B590065F846 /* CFNetwork.framework */; };
 		0DE1F4A31C535B590065F846 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE1F49B1C535B590065F846 /* CoreGraphics.framework */; };
@@ -58,6 +59,7 @@
 /* Begin PBXFileReference section */
 		02B284B71C54672900DEF215 /* EventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		02B284BB1C54681F00DEF215 /* EventTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableView.swift; sourceTree = "<group>"; };
+		02B5E4EB1C54AB9B00B923B9 /* dynamicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dynamicCell.swift; sourceTree = "<group>"; };
 		0DE1F4991C535B590065F846 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0DE1F49A1C535B590065F846 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		0DE1F49B1C535B590065F846 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -182,6 +184,7 @@
 				9325094F1C548FBF00CFDB2D /* RateController.swift */,
 				0DFB998C1C5453D1009684F1 /* SearchController.swift */,
 				0DFB998E1C54AA43009684F1 /* EventDetailed.swift */,
+				02B5E4EB1C54AB9B00B923B9 /* dynamicCell.swift */,
 			);
 			path = sportsPartner;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				4D7A64241C534EF800BE4A9D /* ViewController.swift in Sources */,
 				4D7A64221C534EF800BE4A9D /* AppDelegate.swift in Sources */,
 				9325094E1C54536200CFDB2D /* ProfileController.swift in Sources */,
+				02B5E4EC1C54AB9B00B923B9 /* dynamicCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

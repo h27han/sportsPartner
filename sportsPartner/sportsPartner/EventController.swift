@@ -22,8 +22,9 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
     var event0 = []
     var event1 = []
     var event2 = []
+    var ini = false
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +36,11 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
         tableView.delegate = self
         tableView.dataSource = self
         
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        getActiveEvents(appDelegate.userName)
+        getHostedEvents(appDelegate.userName)
+        getPastEvents(appDelegate.userName)
         tableView.reloadData()
     }
     
@@ -82,9 +88,11 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
                                 }
                                 //resArray is ready
                                 self.event0 = resArray
-                            
-                                self.tableView.reloadData()
-                            
+                                if !(self.ini) {
+                                    self.tableView.reloadData()
+                                    self.ini = true
+                                    
+                                }
                             //}
                         } else {
                             print(error)
@@ -107,8 +115,6 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
             if error == nil {
                 if let objects = objects {
                     self.event1 = objects
-                    
-                    self.tableView.reloadData()
                 }
             } else {
                 print(error)
@@ -154,8 +160,6 @@ class EventController: UIViewController, UITableViewDataSource, UITableViewDeleg
                         }
                         //resArray is ready
                         self.event2 = resArray
-                        
-                        self.tableView.reloadData()
                         //}
                     } else {
                         print(error)

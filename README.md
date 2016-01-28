@@ -1,5 +1,5 @@
 # sportsPartner
-/* An ios app developed in [waterloohacks](https://waterloohacks.io/) */
+/* An ios app developed at [waterloohacks](https://waterloohacks.io/) and ranked top 10 */
 
 What’s the common problem of a sports lover:
 -    hard to find  enough people for team sports
@@ -12,8 +12,7 @@ What’s the common problem of a sports lover:
 
 Solution:
 
--    Solution is, sportsPartner
-
+-    Solution is sportsPartner!
 
 Our Specialty (demo with iphone):
 -    We specialize on sports partner finding, which allows us to offer Sports related clean UI
